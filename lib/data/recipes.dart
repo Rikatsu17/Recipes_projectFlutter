@@ -7,9 +7,9 @@ final List<Recipe> recipes = [
     imageUrl: 'images/ramen.jfif',
     cookTime: 5,
     ingredients: [
-      'Doshirak noodles',
-      'Hot water',
-      'Spices packet',
+      Ingredient(name: 'Doshirak noodles', amount: 100, unit: 'g'),
+      Ingredient(name: 'Hot water', amount: 300, unit: 'ml'),
+      Ingredient(name: 'Spices packet', amount: 1, unit: 'pcs'),
     ],
     steps: [
       'Boil water',
@@ -25,17 +25,17 @@ final List<Recipe> recipes = [
     imageUrl: 'images/butao.jfif',
     cookTime: 10,
     ingredients: [
-      'Bread',
-      'Cheese',
-      'Sausage',
-      'Tomato',
-      'Ketchup or mayonnaise',
+      Ingredient(name: 'Bread', amount: 2, unit: 'slices'),
+      Ingredient(name: 'Cheese', amount: 50, unit: 'g'),
+      Ingredient(name: 'Sausage', amount: 50, unit: 'g'),
+      Ingredient(name: 'Tomato', amount: 30, unit: 'g'),
+      Ingredient(name: 'Ketchup or mayonnaise', amount: 10, unit: 'g'),
     ],
     steps: [
       'Take two slices of bread',
       'Add cheese and sausage',
       'Add vegetables',
-      'spread ketchup/mayonnaise'
+      'Spread ketchup/mayonnaise',
       'Close sandwich',
       'Serve',
     ],
@@ -46,10 +46,10 @@ final List<Recipe> recipes = [
     imageUrl: 'images/pelmen.jfif',
     cookTime: 20,
     ingredients: [
-      'Pelmeni',
-      'Water',
-      'Salt',
-      'Mayonnaise',
+      Ingredient(name: 'Pelmeni', amount: 200, unit: 'g'),
+      Ingredient(name: 'Water', amount: 500, unit: 'ml'),
+      Ingredient(name: 'Salt', amount: 5, unit: 'g'),
+      Ingredient(name: 'Mayonnaise', amount: 20, unit: 'g'),
     ],
     steps: [
       'Boil water with salt',
@@ -65,10 +65,10 @@ final List<Recipe> recipes = [
     imageUrl: 'images/rice.jfif',
     cookTime: 30,
     ingredients: [
-      'Rice',
-      'Chicken breast',
-      'Vegetables',
-      'Salt & spices',
+      Ingredient(name: 'Rice', amount: 100, unit: 'g'),
+      Ingredient(name: 'Chicken breast', amount: 150, unit: 'g'),
+      Ingredient(name: 'Vegetables', amount: 100, unit: 'g'),
+      Ingredient(name: 'Salt & spices', amount: 5, unit: 'g'),
     ],
     steps: [
       'Cook rice',
