@@ -23,18 +23,21 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            widget.recipe.imageUrl.startsWith('http')
-                ? Image.network(
-              widget.recipe.imageUrl,
-              height: 180,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            )
-                : Image.asset(
-              widget.recipe.imageUrl,
-              height: 180,
-              width: double.infinity,
-              fit: BoxFit.cover,
+            Hero(
+              tag: widget.recipe.imageUrl,
+              child: widget.recipe.imageUrl.startsWith('http')
+                  ? Image.network(
+                widget.recipe.imageUrl,
+                height: 180,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              )
+                  : Image.asset(
+                widget.recipe.imageUrl,
+                height: 180,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
 
             Padding(
@@ -104,13 +107,12 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                     ),
                   ),
                   const SizedBox(height: 8),
-
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: widget.recipe.ingredients
-                      .map((ingredient) => Text('- ${ingredient.scaled(servings)}'))
-                      .toList(),
-                ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: widget.recipe.ingredients
+                        .map((ingredient) => Text('- ${ingredient.scaled(servings)}'))
+                        .toList(),
+                  ),
 
                   const SizedBox(height: 20),
 
@@ -122,7 +124,6 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                     ),
                   ),
                   const SizedBox(height: 8),
-
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: widget.recipe.steps

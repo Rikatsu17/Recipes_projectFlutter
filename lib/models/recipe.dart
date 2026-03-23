@@ -1,7 +1,7 @@
 class Ingredient {
   final String name;
-  final double amount; // базовое количество
-  final String unit;   // граммы, мл, шт и т.д.
+  final double amount;
+  final String unit;
 
   Ingredient({
     required this.name,
@@ -9,10 +9,8 @@ class Ingredient {
     required this.unit,
   });
 
-  // Метод для масштабирования по количеству порций
   String scaled(int servings) {
     final scaledAmount = amount * servings;
-    // Убираем .0 если целое число
     String displayAmount = scaledAmount % 1 == 0
         ? scaledAmount.toInt().toString()
         : scaledAmount.toStringAsFixed(1);

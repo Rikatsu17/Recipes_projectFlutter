@@ -27,18 +27,21 @@ class RecipeCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
-              child: recipe.imageUrl.startsWith('http')
-                  ? Image.network(
-                recipe.imageUrl,
-                height: 180,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              )
-                  : Image.asset(
-                recipe.imageUrl,
-                height: 180,
-                width: double.infinity,
-                fit: BoxFit.cover,
+              child: Hero(
+                tag: recipe.imageUrl,
+                child: recipe.imageUrl.startsWith('http')
+                    ? Image.network(
+                  recipe.imageUrl,
+                  height: 180,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                )
+                    : Image.asset(
+                  recipe.imageUrl,
+                  height: 180,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Padding(
